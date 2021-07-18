@@ -1,33 +1,10 @@
 <h1 align="center">Windows 11 in React</h1>
 <br>
 
-### visit: [win11.blueedge.me](https://win11.blueedge.me)
-
-<br>
-
-<img align=top src="./public/img/home.png"/>
+### visit: [win11pro.netlify.app/](https://win11pro.netlify.app/e)
 
 
-<div align="center">
-    <br>
-    <img align=top src="./public/img/allapps.png" height="400"/>
-    <img align=top src="./public/img/sideNav.png" height="400"/>
-<div>
 
-<br>
+### site: [win11pro.netlify.app/](https://win11pro.netlify.app/)
 
-<div align="center">
-    <img align=top src="./public/img/snapping.png" height="280"/>
-    <img align=top src="./public/img/layout.png" height="280"/>
-<div>
-
-<br>
-
-<img align=top src="./public/img/widgets.png"/>
-
-
-### site: [win11.blueedge.me](https://win11.blueedge.me)
-
-Check out the game 🎮 , **UNESCAPE** , I am working on [blueedge.me/unescape](https://blueedge.me/unescape)
-
-[contact me](mailto:blueedgetechno@gmail.com) if you want to collab or make an issue for any upcoming update you want 
+[contact me](mailto:mubashirhasan716@gmail.com) if you want to collab or make an issue for any upcoming update you want 
