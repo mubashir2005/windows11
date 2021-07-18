@@ -6,8 +6,8 @@ import './taskbar.scss';
 const Taskbar = ()=>{
   const tasks = useSelector(state=>state.taskbar);
   const apps = useSelector(state=>{
-    var tmpApps = {...state.apps};
-    for (var i = 0; i < state.taskbar.apps.length; i++) {
+    let tmpApps = {...state.apps};
+    for (let i = 0; i < state.taskbar.apps.length; i++) {
       tmpApps[state.taskbar.apps[i].icon].task = true;
     }
     return tmpApps;
@@ -15,15 +15,15 @@ const Taskbar = ()=>{
   const dispatch = useDispatch();
 
   const showPrev = (event)=>{
-    var ele = event.target;
+    let ele = event.target;
     while(ele && ele.getAttribute('value')==null){
       ele = ele.parentElement;
     }
 
-    var appPrev = ele.getAttribute('value');
-    var xpos = window.scrollX + ele.getBoundingClientRect().left;
+    const appPrev = ele.getAttribute('value');
+    const xpos = window.scrollX + ele.getBoundingClientRect().left;
 
-    var offsetx = Math.round(xpos*10000/window.innerWidth)/100;
+    const offsetx = Math.round(xpos * 10000 / window.innerWidth) / 100;
 
     dispatch({type: "TASKPSHOW", payload: {
       app: appPrev,

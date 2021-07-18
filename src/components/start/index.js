@@ -9,14 +9,15 @@ import axios from 'axios';
 
 export const StartMenu = ()=>{
   const start = useSelector(state=>{
-    var arr = state.startmenu,
-    ln = (6-arr.pnApps.length%6)%6;
+    let i;
+    let arr = state.startmenu,
+        ln = (6 - arr.pnApps.length % 6) % 6;
 
-    for (var i = 0; i < ln; i++) {
+    for (i = 0; i < ln; i++) {
       arr.pnApps.push({empty: true});
     }
 
-    for (var i = 0; i < arr.rcApps.length; i++) {
+    for (i = 0; i < arr.rcApps.length; i++) {
       if(arr.rcApps[i].lastUsed<0){
         arr.rcApps[i].lastUsed = "Recently Added"
       }else if(arr.rcApps[i].lastUsed<10){
@@ -28,14 +29,14 @@ export const StartMenu = ()=>{
       }
     }
 
-    var tmpApps = [...arr.allApps], allApps=[];
+    let tmpApps = [...arr.allApps], allApps = [];
     tmpApps.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
 
-    for (var i = 0; i < 27; i++) {
+    for (i = 0; i < 27; i++) {
       allApps[i] = [];
     }
 
-    for (var i = 0; i < tmpApps.length; i++) {
+    for (i = 0; i < tmpApps.length; i++) {
       var t1 = tmpApps[i].name.trim().toUpperCase().charCodeAt(0);
       if(t1>64 && t1<91){
         allApps[t1-64].push(tmpApps[i]);
@@ -67,11 +68,11 @@ export const StartMenu = ()=>{
     }
 
     if(action.type=="STARTALPHA"){
-      var target = document.getElementById("char"+action.payload);
+      let target = document.getElementById("char" + action.payload);
       if(target){
         target.parentNode.scrollTop = target.offsetTop;
       }else{
-        var target = document.getElementById("charA");
+        target = document.getElementById("charA");
         target.parentNode.scrollTop = 0;
       }
     }
@@ -79,7 +80,7 @@ export const StartMenu = ()=>{
 
   useEffect(()=>{
     if(query.length){
-      for (var i = 0; i < start.allApps.length; i++) {
+      for (let i = 0; i < start.allApps.length; i++) {
         if(start.allApps[i].name.toLowerCase().includes(query.toLowerCase())){
           setMatch(start.allApps[i]);
           break;
@@ -153,7 +154,7 @@ export const StartMenu = ()=>{
               {start.contApps.map((ldx,i)=>{
                 if(ldx.length==0) return null;
 
-                var tpApps = [];
+                const tpApps = [];
                 tpApps.push(
                   <div
                     className="allApp prtclk"
@@ -200,8 +201,8 @@ export const StartMenu = ()=>{
         <div className="menuBar">
           <div className="profile handcr">
             <Icon src="blueProf" ui rounded width={26}
-              click="EXTERNAL" payload="https://blueedge.me"/>
-            <div className="usName">Blue Edge</div>
+              click="EXTERNAL" payload="https://mubashirhasan.gtsb.io"/>
+            <div className="usName">Mubashir Hasan</div>
           </div>
           <div className="powerCtrl">
             <Icon src="power" ui width={14} invert/>
@@ -327,7 +328,7 @@ export const SidePane = ()=>{
   const dispatch = useDispatch();
 
   const clickDispatch = (event)=>{
-    var action = {
+    const action = {
       type: event.target.dataset.action,
       payload: event.target.dataset.payload
     };
@@ -382,7 +383,7 @@ export const WidPane = ()=>{
     console.log(process.env.REACT_APP_DEVELOPEMENT);
     if(process.env.REACT_APP_DEVELOPEMENT!="development"){
       if(!widget.updated){
-        var tmpWdgt = await fetchApi(widget);
+        const tmpWdgt = await fetchApi(widget);
         console.log("Fetching Api's");
         if(tmpWdgt.updated){
           dispatch({
@@ -549,15 +550,15 @@ export const WidPane = ()=>{
 }
 
 const fetchApi = async (widget)=>{
-  var tmpWdgt = {...widget};
-  var date = new Date();
+  const tmpWdgt = {...widget};
+  const date = new Date();
 
   console.log('fetching ON THIS DAY');
   await axios.get(`https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/${date.getMonth()}/${date.getDay()}`)
     .then(res=>res.data).then(data => {
       console.log("Fetched");
-      var event = data.events.[Math.floor(Math.random() * data.events.length)];
-      date.setYear(event.year);
+        const event = data.events.[Math.floor(Math.random() * data.events.length)];
+        date.setYear(event.year);
 
     tmpWdgt.data.date = date.toLocaleDateString("en-US", {
       year: "numeric",
@@ -574,12 +575,12 @@ const fetchApi = async (widget)=>{
   await axios.get(`https://saurav.tech/NewsAPI/top-headlines/category/general/in.json`)
     .then(res=>res.data).then(data => {
       console.log('NEWS Fetched');
-      var newsList = [];
-      for (var i = 0; i < data.totalResults; i++) {
-        var item = {
-          ...data.articles[i]
-        };
-        item.title = item.title.split("-").reverse().splice(1).reverse().join("-").trim();
+        let newsList = [];
+        for (let i = 0; i < data.totalResults; i++) {
+          let item = {
+            ...data.articles[i]
+          };
+          item.title = item.title.split("-").reverse().splice(1).reverse().join("-").trim();
         newsList.push(item);
       }
 

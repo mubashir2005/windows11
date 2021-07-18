@@ -55,7 +55,7 @@ export default [
 },
 {
   idx: 8,
-  name: 'Blue',
+  name: 'Mubashir',
   icon: 'win/userDir',
   type: 'short'
 }, {
@@ -85,7 +85,7 @@ export default [
 },
 {
   idx: 13,
-  name: 'VS Code',
+  name: 'Webstorm',
   icon: 'code',
   type: 'app',
   action: 'VSCODE'
@@ -229,7 +229,7 @@ export default [
   icon: 'pinterest',
   type: 'app',
   action: 'EXTERNAL',
-  payload: 'https://pinterest.com/blue_edge'
+  payload: 'https://pinterest.com/'
 },
 {
   idx: 37,
@@ -245,11 +245,11 @@ export default [
 },
 {
   idx: 39,
-  name: 'Spotify',
+  name: 'Pycharm',
   icon: 'spotify',
   type: 'app',
   action: 'EXTERNAL',
-  payload: "https://open.spotify.com/user/62axxw0etmycj09el078cock0"
+  payload: ""
 },
 {
   idx: 40,
@@ -281,7 +281,7 @@ export default [
   icon: 'twitter',
   type: 'app',
   action: 'EXTERNAL',
-  payload: "https://twitter.com/blueedgetechno"
+  payload: "https://twitter.com/"
 },
 {
   idx: 45,
@@ -345,5 +345,5 @@ export default [
   icon: 'github',
   type: 'app',
   action: 'EXTERNAL',
-  payload: "https://github.com/blueedgetechno/windows11"
+  payload: "https://github.com/dingus45191"
 }];
