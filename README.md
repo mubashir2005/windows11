@@ -1,4 +1,5 @@
-<h1 align="center">Windows 11 in React</h1>
+<h1 align="center">Windows 11 inside your browser</h1>
+<h2>Built in React </h2>
 <br>
 
 
